@@ -1,8 +1,8 @@
 let loggedInUserId = null;
 
 function login() {
-    const login = document.getElementById('login').value;
-    const password = document.getElementById('password').value;
+    const login = document.getElementById('Login').value;
+    const password = document.getElementById('Password').value;
     const url = 'http://quillcontacts.com/LAMPAPI/Login.php';
 
     const data = {
