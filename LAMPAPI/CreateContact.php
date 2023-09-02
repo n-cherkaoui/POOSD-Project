@@ -44,9 +44,5 @@
 		$retValue = '{"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
-	function returnWithInfo( $contactId )
-	{
-		$retValue = '{"contactId":' . $contactId . ',"error":""}';
-		sendResultInfoAsJson( $retValue );
-	}
+
 ?>
