@@ -1,42 +1,22 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>Contact Manager</title>
+	<title>COP 4331 LAMP Stack Demo</title>
+	<script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript" src="js/code.js"></script>
+    <link href="css/styles.css" rel="stylesheet">	
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 </head>
 <body>
-    <h1>Contact Manager</h1>
 
-    <div id="loginForm">
-        <h2>Login</h2>
-        <label for="Login">Username:</label>
-        <input type="text" id="Login" name="Login" required><br>
-        <label for="Password">Password:</label>
-        <input type="password" id="Password" name="Password" required><br>
-        <button onclick="login()">Login</button>
-    </div>
+<h1 id="title">COP 4331 LAMP Stack Demo</h1>
 
-    <div id="contactsSection" style="display: none;">
-        <!-- Search Contacts -->
-        <h2>Search Contacts</h2>
-        <label for="search">Search:</label>
-        <input type="text" id="search" name="search">
-        <button onclick="searchContacts()">Search</button>
-        <div id="searchResults"></div>
+<div id="loginDiv">
+	<span id="inner-title">PLEASE LOG IN</span>
+	<input type="text" id="loginName" placeholder="Username" /><br />
+	<input type="password" id="loginPassword" placeholder="Password"/><br />
+	<button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Do It </button>
+	<span id="loginResult"></span>
+</div>
 
-        <h2>Create Contact</h2>
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName" required><br>
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName" required><br>
-        <label for="phone">Phone:</label>
-        <input type="text" id="phone" name="phone" required><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br>
-        <button onclick="createContact()">Create Contact</button>
-    </div>
-
-    <button id="logoutButton" style="display: none;" onclick="logout()">Logout</button>
-
-    <script src="code.js"></script>
 </body>
 </html>
