@@ -63,8 +63,8 @@ function doLogin() {
         userId = jsonObject.id;
 
         if (userId < 1) {
-          document.getElementById("result").innerHTML = "User/Password combination incorrect";
-          alert("wrong user/pass")
+          document.getElementById("result").innerHTML = "User/Password combination incorrect, userid is" +userId;
+          alert("wrong user/pass");
           return;
         }
 
@@ -81,6 +81,60 @@ function doLogin() {
   }
   catch (err) {
     document.getElementById("result").innerHTML = err.message;
+  }
+}
+
+
+function register() {
+  alert("reached register")
+  userId = 0;
+  //firstName = "";
+  //lastName = "";
+
+  firstName = document.getElementById("firstName").value;
+  lastName = document.getElementById("lastName").value;
+  let login = document.getElementById("loginN").value;
+  let password = document.getElementById("loginP").value;
+  //	var hash = md5(password);
+  //document.getElementById("result").innerHTML = "";
+
+
+  let tmp = { firstName: firstName, lastName: lastName, login: login, password: password };
+  //	var tmp = {login:login,password:hash};
+  let jsonPayload = JSON.stringify(tmp);
+  let url = urlBase + '/Register.' + extension;
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", url, true);
+ 
+  xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+  try {
+    xhr.onreadystatechange = function() {
+      alert("readyState = " + this.readyState)
+      alert("status = " + this.status)
+      if (this.readyState == 4 && this.status == 200) {
+		document.getElementById("result").innerHTML = "User successfully registeredt";
+        //let jsonObject = JSON.parse(xhr.responseText);
+        //userId = jsonObject.id;
+        /*
+            if( userId < 1 ){		
+              document.getElementById("result").innerHTML = "User/Password combination incorrect";
+              alert("wrong user/pass")
+              return;
+            }*/
+
+        //firstName = jsonObject.firstName;
+        //lastName = jsonObject.lastName;
+		
+        saveCookie();
+
+        window.location.href = "index.html";
+      }
+    };
+    alert("sending")
+    xhr.send(jsonPayload);
+  }
+  catch (err) {
+   // document.getElementById("result").innerHTML = err.message;
   }
 }
 
@@ -118,25 +172,31 @@ function readCookie() {
 }
 
 
-/*
-function doLogout()
-{
+function doLogout(){
   userId = 0;
   firstName = "";
   lastName = "";
   document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
   window.location.href = "index.html";
-}*/
-/*
-function addColor()
-{
-  let newColor = document.getElementById("colorText").value;
-  document.getElementById("colorAddResult").innerHTML = "";
+}
 
-  let tmp = {color:newColor,userId,userId};
+function addContact()
+{
+  alert("inside contact")
+ readCookie();
+ document.getElementById("useridprint").innerHTML = "userid is " +userId;
+  firstName = document.getElementById("firstN").value;
+  alert(userId)
+  lastName = document.getElementById("lastN").value;
+  let phone = document.getElementById("phoneNum").value;
+  let email = document.getElementById("email").value;
+  document.getElementById("contactAddResult").innerHTML = "";
+
+  alert("after variables")
+  let tmp = {userId: userId, firstName: firstName, lastName: lastName, phone:phone, email:email};
   let jsonPayload = JSON.stringify( tmp );
 
-  let url = urlBase + '/AddColor.' + extension;
+  let url = urlBase + '/CreateContact.' + extension;
 	
   let xhr = new XMLHttpRequest();
   xhr.open("POST", url, true);
@@ -145,20 +205,23 @@ function addColor()
   {
     xhr.onreadystatechange = function() 
     {
+		alert(this.readyState)
+		alert(this.status)
       if (this.readyState == 4 && this.status == 200) 
       {
-        document.getElementById("colorAddResult").innerHTML = "Color has been added";
+		alert("inside if")
+        document.getElementById("contactAddResult").innerHTML = "Contact has been added";
       }
     };
     xhr.send(jsonPayload);
   }
   catch(err)
   {
-    document.getElementById("colorAddResult").innerHTML = err.message;
+    document.getElementById("contactAddResult").innerHTML = err.message;
   }
 	
 }
-*/
+
 $(".link").on("click", function(e) {
 
 });

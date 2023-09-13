@@ -2,9 +2,9 @@
 
 <head>
   <title>COP 4331 Contact Library</title>
-  <script src="/js/md5.js"></script>
-  <script src="/js/code.js"></script>
-  <link href="/css/style.css" rel="stylesheet">
+  <script src="md5.js"></script>
+  <script  src="code.js"></script>
+  <link href="style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Nunito|Almarai" rel="stylesheet">
 </head>
 
@@ -13,29 +13,30 @@
     <div id="rightside">
       <h1 style="padding-top:150px;text-align:center;color: white">Welcome to<br> Quill Contacts!</h1>
       <div id="loginform">
-        <input type="loginName" id="loginName" placeholder="Username" />
-        <input type="loginPassword" id="loginPassword" placeholder="Password" />
-        <div style="text-align:center">
-          <button type="buttons" id="loginButton" class="buttons" onclick="doLogin();"> Login </button>
-          <p id="result"></p>
-          <h2 style="padding-top:20px;text-align:center;color: white">Don't have an account?</h2>
-          <button type="buttons" id="registerButton" class="buttons" onclick="myFunction()"> Register </button>
+      <input type="loginName" id= "loginName" placeholder="Username" />
+      <input type="loginPassword" id="loginPassword" placeholder="Password" />
+      <div style="text-align:center">
+        <button type="buttons" id="loginButton" class="buttons" onclick="doLogin();"> Login </button>
+        <p id="result"></p>
+        <h2 style="padding-top:20px;text-align:center;color: white">Don't have an account?</h2>
+         <button type="buttons" id="registerButton" class="buttons" onclick="myFunction();"> Register </button>
         </div>
       </div>
       <div id="registerform">
-        <div class="signup" id="signupnowtest">Register Now!</div>
-        <input type="firstname" placeholder="First Name" />
-        <input type="lastname" placeholder="Last Name" />
-        <input type="loginName" placeholder="Username" />
-        <input type="loginPassword" placeholder="Password" />
+       <div class= "signup" id="signupnowtest">Register Now!</div>
+        <input type="firstName" id= "firstName" placeholder="First Name" />
+        <input type="lastName" id= "lastName" placeholder="Last Name" />
+        <input type="loginName" id= "loginN" placeholder="Username" />
+        <input type="loginPassword" id= "loginP" placeholder="Password" />
         <div style="text-align:center">
-          <button type="buttons" id="registerButton2" class="buttons" onclick="register()"> Register </button>
+        <button type="buttons" id="registerButton2"  class="buttons" onclick="register();"> Register </button>
+        <p id="result"></p>
           <h2 style="text-align:center;color: white">Have an account?</h2>
-          <button type="buttons" id="loginButton2" class="buttons" onclick="myFunction2()"> Login </button>
+         <button type="buttons" id="loginButton2"  class="buttons" onclick="myFunction2();"> Login </button>
+        </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 
   <div class="dividescreen" id="left">
@@ -47,8 +48,8 @@
     </div>
   </div>
   </div>
-  <div>
-  </div>
+    <div>
+ </div>
 </body>
 
 </html>
