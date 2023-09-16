@@ -54,7 +54,7 @@ body {
 }
 
 .app-header h2 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: antiquewhite;
 }
 
@@ -128,4 +128,52 @@ footer {
     text-align: center;
     color: var(--primary-color);
     margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+    body {
+        background-size: auto;
+        padding: 10px;
+    }
+    
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .contact-section {
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    .app-header h1 {
+        font-size: 2rem;
+    }
+
+    .user-info {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .button-primary {
+        width: 100%;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"] {
+        max-width: 100%;
+    }
+
+    .contact-list {
+        text-align: center;
+    }
+
+    footer {
+        margin-top: 20px;
+    }
 }
