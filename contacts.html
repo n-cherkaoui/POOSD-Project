@@ -1,51 +1,86 @@
-<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quill Contacts - Contact Manager</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Quicksands" rel="stylesheet">
     <script src="/js/md5.js"></script>
     <script src="/js/code.js"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksands" rel="stylesheet">
+    
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function () {
+          readCookie();
+      }, false);
+    </script>
+    
+    <script type="text/javascript">
+      var k = "The respective values are :";
+      function getName(i) {
+          var input = document.getElementsById('contactNames');
+          var a = input[i];
+          document.getElementById("par").innerHTML = k + a;
+
+      }
+  </script>
+    
 </head>
 
-<body>
-    <header class="app-header">
-      <h1>Quill Contacts</h1>
-      <h2>Welcome To Your Contact Manager!</h2>
-      <div class="user-info">
-            <span id="userName"></span>
-            <button type="button" id="logoutButton" class="button-primary" onclick="doLogout();">Log Out</button>
-        </div>
-    </header>
+<body>    
+  <header class="app-header">
+  <h1>Quill Contacts</h1>
+  <h2>Welcome To Your Contact Manager!</h2>
+  </header>
 
-    <div class="container">
+    <div id="loggedInDiv">
+      <div class="user-info">
+        <span id="userName"></span>
+        <button type="button" id="logoutButton" class="buttons" onclick="doLogout();"> Log Out </button>
+      </div>
+    </div>  
+    
+
+    <div id="displayContactsDiv">
+      <br />
+
+      <p id="contactNames">
+          <script>
+              getName(0);
+          </script>
+
+      </p><br /><br />
+
+        <p id="contactList">
+        </p><br /><br />
+    </div>
       
+    <div class="container">
+    
+    <div id="searchDiv">
       <div class="contact-section search-contact">
         <h2>Search For A Contact</h2>
         <input type="text" id="searchText" placeholder="Contact To Search For" required>
         <button type="button" id="searchContactButton" class="button-primary" onclick="searchContact();">Search Contact</button>
-        <p id="contactSearchResult"></p>
-      </div>
-      
-      <div class="contact-section create-contact">
-          <h2>Create A New Contact</h2>
-          <form id="contactForm">
-              <input type="text" id="firstN" placeholder="First Name" required>
-              <input type="text" id="lastN" placeholder="Last Name" required>
-              <input type="tel" id="phoneNum" placeholder="Phone Number" required>
-              <input type="email" id="email" placeholder="Email" required>
-              <button type="button" id="addContactButton" class="button-primary" onclick="addContact();">Add a Contact</button>
-          </form>
-          <p id="contactAddResult"></p>
+        <span id="contactSearchResult"></span>
+        <p id="contactList">
       </div>
     </div>
     
-    <footer>
-    <p id="par"></p>
-    </footer>
+    <div id="contacts">
+      <div class="contact-section create-contact">
+          <h2>Create A New Contact</h2>
+            <input type="text" id="firstN" placeholder="First Name" required>
+            <input type="text" id="lastN" placeholder="Last Name" required>
+            <input type="tel" id="phoneNum" placeholder="Phone Number" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <button type="button" id="addcontactbutton" class="button-primary" onclick="addContact();">Add a Contact</button>
+          <p id="contactAddResult"></p>
+      </div>
+    </div>
+  </div>  
+  <footer>
+  <p id="par"></p>
+  </footer>
     
 </body>
 
