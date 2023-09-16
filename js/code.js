@@ -81,12 +81,11 @@ function doLogin() {
                     document.getElementById("result").innerHTML = "User/Password combination incorrect";
                     return;
                 }
-
+                
                 firstName = jsonObject.firstName;
                 lastName = jsonObject.lastName;
-
+                
                 saveCookie();
-
                 window.location.href = "contacts.html";
             }
         };
@@ -246,6 +245,7 @@ function searchContact() {
     document.getElementById("contactSearchResult").innerHTML = "";
 
     let contactList = "";
+    let contactNames = "";
 
     let tmp = { search: srch, userId: userId };
     let jsonPayload = JSON.stringify(tmp);
@@ -259,13 +259,18 @@ function searchContact() {
     try {
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("contactSearchResult").innerHTML = "Contact(s) has been retrieved";
+                document.getElementById("contactSearchResult").innerHTML = "Contact(s) have been retrieved";
                 let jsonObject = JSON.parse(xhr.responseText);
 
                 for (let i = 0; i < jsonObject.results.length; i++) {
-                    alert(jsonObject.results[i])
-                    contactList += jsonObject.results[i];
+                    let contact = jsonObject.results[i];
+                    //let contactName = `${contact.firstName} ${contact.lastName}`;
+                    let contactInfo = `First Name: ${contact.firstName}, Last Name: ${contact.lastName}, Phone Number: ${contact.phone}, Email: ${contact.email}`;
+                    contactList += contactInfo;
+                    //contactNames += contactName;
+
                     if (i < jsonObject.results.length - 1) {
+                        //contactNames += "<br />\r\n";
                         contactList += "<br />\r\n";
                     }
                 }
@@ -274,8 +279,7 @@ function searchContact() {
             }
         };
         xhr.send(jsonPayload);
-    }
-    catch (err) {
+    } catch (err) {
         document.getElementById("contactSearchResult").innerHTML = err.message;
     }
 }

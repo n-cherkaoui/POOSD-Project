@@ -20,7 +20,7 @@ img {
 #left {
     background-image:
     linear-gradient(to left, rgba(255, 255, 255, 0.904), rgba(255, 255, 255, 0.404)),
-    url(/images/bookshelf.jpg);
+    url(../images/bookshelf.jpg);
     background-size: contain;
     margin: 0;
     padding: 0;
@@ -146,6 +146,11 @@ h2 {
 h3 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #4ECDC4;
+}
+
+p {
+    font-family: "Nunito";
+    color: #0e2d50;
 }
 
 /*
