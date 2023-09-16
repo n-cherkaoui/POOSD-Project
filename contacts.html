@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -14,48 +15,22 @@
       }, false);
     </script>
     
-    <script type="text/javascript">
-      var k = "The respective values are :";
-      function getName(i) {
-          var input = document.getElementsById('contactNames');
-          var a = input[i];
-          document.getElementById("par").innerHTML = k + a;
-
-      }
-  </script>
-    
 </head>
 
-<body>    
+<body>
   <header class="app-header">
-  <h1>Quill Contacts</h1>
-  <h2>Welcome To Your Contact Manager!</h2>
-  </header>
-
+    <h1>Quill Contacts</h1>
+    <h2>Welcome To Your Contact Manager!</h2>
+  
     <div id="loggedInDiv">
       <div class="user-info">
         <span id="userName"></span>
-        <button type="button" id="logoutButton" class="buttons" onclick="doLogout();"> Log Out </button>
+        <button type="button" id="logoutButton" class="button-primary" onclick="doLogout();"> Log Out </button>
       </div>
     </div>  
+  </header>
     
-
-    <div id="displayContactsDiv">
-      <br />
-
-      <p id="contactNames">
-          <script>
-              getName(0);
-          </script>
-
-      </p><br /><br />
-
-        <p id="contactList">
-        </p><br /><br />
-    </div>
-      
-    <div class="container">
-    
+  <div class="container">
     <div id="searchDiv">
       <div class="contact-section search-contact">
         <h2>Search For A Contact</h2>
@@ -63,25 +38,25 @@
         <button type="button" id="searchContactButton" class="button-primary" onclick="searchContact();">Search Contact</button>
         <span id="contactSearchResult"></span>
         <p id="contactList">
+        </p><br /><br />
       </div>
     </div>
     
     <div id="contacts">
       <div class="contact-section create-contact">
-          <h2>Create A New Contact</h2>
-            <input type="text" id="firstN" placeholder="First Name" required>
-            <input type="text" id="lastN" placeholder="Last Name" required>
-            <input type="tel" id="phoneNum" placeholder="Phone Number" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <button type="button" id="addcontactbutton" class="button-primary" onclick="addContact();">Add a Contact</button>
-          <p id="contactAddResult"></p>
+        <h2>Create A New Contact</h2>
+        <input type="text" id="firstN" placeholder="First Name" required>
+        <input type="text" id="lastN" placeholder="Last Name" required>
+        <input type="tel" id="phoneNum" placeholder="Phone Number" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <button type="button" id="addcontactbutton" class="button-primary" onclick="addContact();">Add a Contact</button>
+        <p id="contactAddResult"></p>
       </div>
     </div>
   </div>  
   <footer>
-  <p id="par"></p>
+    <p id="par"></p>
   </footer>
-    
 </body>
 
 </html>
