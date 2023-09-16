@@ -1,55 +1,78 @@
 <html>
 
 <head>
-  <title>COP 4331 Contact Library</title>
-  <script src="md5.js"></script>
-  <script  src="code.js"></script>
-  <link href="style.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Nunito|Almarai" rel="stylesheet">
+    <title>COP 4331 Contact Library</title>
+    <script src="js/md5.js"></script>
+    <script src="js/code.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Almarai" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/241fdb8d3d.js" crossorigin="anonymous"></script>
+    
 </head>
 
 <body>
-  <div class="dividescreen" id="right">
-    <div id="rightside">
-      <h1 style="padding-top:150px;text-align:center;color: white">Welcome to<br> Quill Contacts!</h1>
-      <div id="loginform">
-      <input type="loginName" id= "loginName" placeholder="Username" />
-      <input type="loginPassword" id="loginPassword" placeholder="Password" />
-      <div style="text-align:center">
-        <button type="buttons" id="loginButton" class="buttons" onclick="doLogin();"> Login </button>
-        <p id="result"></p>
-        <h2 style="padding-top:20px;text-align:center;color: white">Don't have an account?</h2>
-         <button type="buttons" id="registerButton" class="buttons" onclick="myFunction();"> Register </button>
-        </div>
-      </div>
-      <div id="registerform">
-       <div class= "signup" id="signupnowtest">Register Now!</div>
-        <input type="firstName" id= "firstName" placeholder="First Name" />
-        <input type="lastName" id= "lastName" placeholder="Last Name" />
-        <input type="loginName" id= "loginN" placeholder="Username" />
-        <input type="loginPassword" id= "loginP" placeholder="Password" />
-        <div style="text-align:center">
-        <button type="buttons" id="registerButton2"  class="buttons" onclick="register();"> Register </button>
-        <p id="result"></p>
-          <h2 style="text-align:center;color: white">Have an account?</h2>
-         <button type="buttons" id="loginButton2"  class="buttons" onclick="myFunction2();"> Login </button>
-        </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    <div class="dividescreenRight" id="right">
+        <div class="rightside">
+            <h1><i class="fa-solid fa-feather-pointed" style="color: #ffffff;"></i> Quill Contacts</h1>
+            
+            <div id="loginform">
+                <h2 style="text-align: center;">Login</h2>
 
-  <div class="dividescreen" id="left">
-    <div id="leftside">
-      <h2 style="padding-top:20px;text-align:center;">Your Favorite Contact Library</h2>
+                <input type="loginName" id="loginName" placeholder="Username" />
+                <input type="password" size="20" maxlength="20" id="loginPassword" placeholder="Password" />
+
+                <p>
+                <h2 style="text-align: center;">
+                    <br><input type="checkbox" onclick="showPassword()">Show Password
+                </h2>
+
+                </p>
+
+                <div style="text-align:center">
+                    <button type="buttons" id="loginButton" class="buttons" onclick="doLogin();"> Login </button>
+                    <button type="buttons" id="registerButton" class="deselect" onclick="myFunction();"> Register
+                    </button>
+                    <p id="result"></p>
+                </div>
+            </div>
+
+            <div id="registerform">
+                <h2>Register Now!</h2>
+
+                <input type="firstName" id="firstName" placeholder="First Name" />
+                <input type="lastName" id="lastName" placeholder="Last Name" />
+                <input type="loginName" id="loginN" placeholder="Username" />
+                <input type="password" size="20" maxlength="20" id="loginP" placeholder="Password" />
+
+                <p>
+                <h2 style="text-align: center">
+                    <br><input type="checkbox" onclick="showPassword2()">Show Password
+                </h2>
+
+                </p>
+
+                <div style="text-align:center">
+                    <button type="buttons" id="loginButton2" class="deselect" onclick="myFunction2();"> Login </button>
+                    <button type="buttons" id="registerButton2" class="buttons" onclick="register();"> Register
+                    </button>
+                    <p id="result"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="dividescreenLeft" id="left">
+        <div id="leftside">
+            <!--<h2 style="padding-top:20px;text-align:center;">Your Favorite Contact Library</h2>
       <div style="text-align:center">
         <img src="/images/quillpic.jpg">
-      </div>
+      </div>-->
+        </div>
     </div>
-  </div>
-  </div>
+    </div>
     <div>
- </div>
+    </div>
 </body>
 
 </html>

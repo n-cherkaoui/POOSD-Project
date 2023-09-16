@@ -1,30 +1,32 @@
 <html>
 
 <head>
-  <script src="md5.js"></script>
-  <script  src="code.js"></script>
-  <link href="style.css" rel="stylesheet">
+  <script src="/js/md5.js"></script>
+  <script src="/js/code.js"></script>
+  <link href="/css/style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Quicksands" rel="stylesheet">
+
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() 
+    {
+      readCookie();
+    }, false);
+  </script>
 </head>
 
 <body>
-    <div class="screen" id="wholescreen">
-        <div id="contacts">
-         <input type="firstName" id= "firstN" placeholder="First Name" />
-         <input type="lastName" id= "lastN" placeholder="Last Name" />
-         <input type="loginName" id= "phoneNum" placeholder="Phone Number" />
-         <input type="loginPassword" id= "email" placeholder="Email" />
-         <div class="sidebar" style="width:25%">
-            <h3 class="items">Menu</h3>
-            <a href="#" class="Create">Link 1</a>
-            <a href="#" class="Search">Link 2</a>
-          </div>
-         <div style="text-align:center">
-        <button type="buttons" id="addacontactbutton"  class="buttons" onclick="addContact();"> Add a Contact </button>
-        <p id="useridprint"></p> 
+  <div class="screen" id="wholescreen">
+    <div id="contacts">
+      <input type="firstName" id="firstN" placeholder="First Name" />
+      <input type="lastName" id="lastN" placeholder="Last Name" />
+      <input type="loginName" id="phoneNum" placeholder="Phone Number" />
+      <input type="loginPassword" id="email" placeholder="Email" />
+      <div style="text-align:center">
+        <button type="buttons" id="addacontactbutton" class="buttons" onclick="addContact();"> Add a Contact </button>
         <p id="contactAddResult"></p>
-         </div>
-         </div>
-       </div>
+      </div>
+    </div>
+  </div>
 </body>
-    </html>
+
+</html>
