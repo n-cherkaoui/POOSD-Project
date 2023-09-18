@@ -1,0 +1,649 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    min-width: 700px;
+}
+
+hr.solid {
+    width: auto;
+    margin-right: 10px;
+    text-align: left;
+    border-top: 2px solid #bbb;
+    margin-bottom: 0px;
+}
+
+#contactPopup {
+    text-align: center;
+    display: none;
+}
+
+#contactmessage{
+  width: auto;
+  height: auto;
+  border: none;
+  outline: none;
+  background-color: #bbb;
+}
+
+#contactspage {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    min-width: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+#contactDisplay {
+    padding-right: 10px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.dividescreenRight {
+    height: 100vh;
+    width: 30%;
+}
+
+#left {
+    background-image:
+        linear-gradient(to left, rgba(255, 255, 255, 0.904), rgba(255, 255, 255, 0.404)),
+        url(/images/bookshelf.jpg);
+    background-size: contain;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 70%;
+    min-width: 700px;
+}
+
+#leftside {
+    margin: 0 auto;
+}
+
+
+#right {
+    float: right;
+    border-radius: 80px 0px 0px 80px;
+    background-color: #87b0cc;
+    position: relative;
+    min-width: 400px;
+    max-width: 700px;
+}
+
+.rightside {
+    width: 70%;
+    margin-top: 30vh;
+    transform: translateY(-50%);
+    position: absolute;
+    padding: 70px 60px 70px;
+}
+
+.rightside h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 35px;
+    margin-bottom: 10%;
+    padding-top: 150px;
+}
+
+.rightside h2 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 0px;
+}
+
+.rightside button {
+    background-color: #0e2d50;
+    border-radius: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 0px;
+    height: 30px;
+    width: 30px;
+    margin-top: 10%;
+    font-size: 20px;
+    width: 40%;
+    outline: none;
+    border: none;
+    font-family: "Cormorant Garamond";
+}
+
+.rightside button:hover {
+    background-color: #ffffff;
+    color: #0e2d50;
+    opacity: 50%;
+}
+
+.rightside button.deselect {
+    background-color: #ffffff;
+    color: #0e2d50;
+}
+
+.rightside button.deselect:hover {
+    background-color: #0e2d50;
+    color: #ffffff;
+    opacity: 50%;
+}
+
+.loginbutton {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    color: #0e2d50;
+    margin-top: 5%;
+    cursor: pointer;
+}
+
+#contactbutton {
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    height: auto;
+    border-radius: 10px;
+}
+
+#contactbutton:hover {
+    background-color: #87b0cc;
+    opacity: 80%;
+    width: 100%;
+    height: 70px;
+}
+
+#logout {
+    background-color:rgba(255, 255, 255, 0.904);
+    border-radius: 10px;
+    color: #87b0cc;
+    outline: none;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    padding-left: 55%;
+    padding-top: 37px;
+    float: right;
+    width: 80px;
+    height: 35px;
+    font-family: "Cormorant Garamond";
+}
+
+.registerbutton {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding-top: -100px;
+    color: #87b0cc;
+    cursor: pointer;
+}
+
+#registerform {
+    padding-top: 30px;
+    text-align: center;
+    display: none;
+    font-family: "Cormorant Garamond";
+    position: fixed;
+}
+
+#addContact {
+    height: 50px;
+    background-color: white;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-family: "Cormorant Garamond";
+    color: #090ce2; 
+    cursor: pointer;
+    text-align: center;
+    width: 50%;
+}
+
+div.column{
+  text-align: center;
+  margin-left: 40%;
+  margin-top: 30px;
+  padding-top: 10px;
+}
+
+#nameList {
+    color: #0e2d50;
+    font-size: larger;
+    font-family: "Cormorant Garamond";
+}
+
+#contactTb {
+    background-color: #ffffff;
+    font-size: larger;
+    font-family: 'Cormorant Garamond';
+    padding-bottom: 100px;
+}
+
+#editPopup {
+    height: 30px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin: center;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #87b0cc;
+    cursor: pointer;
+    text-align: center;
+    width: px;
+    display: none;
+}
+
+#deletePopup {
+    height: 30px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-family: "Cormorant Garamond";
+    color: #87b0cc;
+    cursor: pointer;
+    text-align: center;
+    width: 100px;
+    display: none;
+}
+
+/*
+#loginform {
+    padding-top: 30px;
+    text-align: center;
+    display: contents;
+    font-family: "Cormorant Garamond";
+    position: fixed;
+}*/
+
+.signup {
+    padding-top: 20px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: "Cormorant Garamond";
+}
+
+h1 {
+    font-family: "Cormorant Garamond";
+    color: #87b0cc;
+    padding-bottom: 0%;
+}
+
+h2 {
+    font-family: "Cormorant Garamond";
+    color: #87b0cc;
+}
+
+h3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #87b0cc;
+}
+
+table,
+th,
+td {
+    width: 98%;
+    border-collapse: collapse;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    border-color: #d8d8d8;
+    color: #0e2d50;
+}
+
+td {
+    height: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+::placeholder { 
+  font-family: "Cormorant Garamond";
+  font-size: 20px;
+}
+
+.topnav {
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+td button {
+    text-align: left;
+    width: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 30px;
+    color:#87b0cc;
+    font-family: "Cormorant Garamond";
+    border: none;
+}
+
+td button:hover {
+    background-color: #d8d8d8;
+    border-radius: 20px;
+    color: #0e2d50
+}
+
+#logout:hover {
+  border-radius: 20px;
+  color: #0e2d50
+}
+/*
+  .loginButton:focus{
+    background-color: blue;
+  }
+
+  .registerbutton:focus{
+    background-color: blue;
+  }*/
+
+#searchText {
+    border-radius: 10px;
+    background-color: #fff382;
+    outline: none;
+    border: none;
+    height: 40px;
+    width: 80%
+}
+
+#searchicon{
+  margin-top: 5px;
+  font-size: 30px;
+}
+
+#addicon{
+  font-size: 40px;
+}
+
+
+#srchBtn {
+    border-radius: 10px;
+    background-color: #E3E3E3;
+    margin-left: -20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    width: 25%;
+}
+
+#searchbutton {
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+
+#searchPopup {
+    text-align: center;
+    display: none;
+    font-family: "Cormorant Garamond";
+    position: fixed;
+}
+
+#addbutton {
+    height: 50px;
+    width: 50px;
+    border-radius: 20px;
+    padding-top: 0px;
+    cursor: pointer;
+    outline: none;
+    background-color: white;
+    border: none;
+}
+
+#contactsline {
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-family: "Cormorant Garamond";
+}
+
+#firstnamehere {
+    color: #87b0cc;
+    background-color: #ffffff;
+    font-size: 20px;
+    padding-top: 18px;
+    font-family: "Cormorant Garamond";
+}
+
+
+input[type="contactinfo"] {
+    border-radius: 10px;
+    text-align: left;
+    width: auto;
+    overflow-x: hidden;
+    margin-left: 5%;
+    font-family: "Cormorant Garamond";
+    font-size: 20px;
+    height: 30px;
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: inline-block;
+    background-color: #FAFAFA;
+    border: none;
+}
+
+
+i.material-icons {
+    color: #87b0cc;
+    font-size: 35px;
+    padding-bottom: 10px;
+}
+
+p.subheadings {
+    font-family: "Cormorant Garamond";
+    color: #87b0cc;
+    margin-bottom: 15px;
+}
+
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+
+hr.solid2 {
+    margin-right: 10px;
+    width: auto;
+    border: 1px solid #bbb;
+}
+
+#contactinfothatexists {
+    font-size: 20px;
+    text-align: left;
+    color: #87b0cc;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+input[type="firstName"],
+input[type="lastName"],
+input[type="loginName"],
+input[type="password"],
+input[type="loginPassword"],
+input[type="phone"],
+input[type="email"] {
+    border-radius: 10px;
+    text-align: left;
+    width: 80%;
+    margin-bottom: 2%;
+    margin-left: 10%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    height: 30px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: inline-block;
+    background-color: #ffffff;
+    border: none;
+}
+
+#result {
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font-family: "Cormorant Garamond";
+    color: #95060a;
+}
+
+#logo {
+    color: #87b0cc;
+    padding-left: 25px;
+    font-size: 35px;
+    font-family: 'Cormorant Garamond';
+}
+
+span.material-symbols-outlined {
+    font-size: 45px;
+    padding-right: 12px;
+    padding-top: 8px;
+    color: #0e2d50;
+}
+
+
+.buttons {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    color: #87b0cc;
+    cursor: pointer;
+    padding: 0px;
+    height: 30px;
+    width: 35px;
+    margin-top: 10%;
+    font-size: 20px;
+    width: 50%;
+    outline: none;
+    border: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*
+.buttons:hover {
+    background-color: #a3e7ec;
+    color: #FFFFFF;
+    opacity: 50%;
+}
+*/
+
+nav {
+    height: 15%;
+    background: white;
+    position: fixed;
+}
+
+.section {
+    flex: 1 1 0%;
+    display: flex;
+    background-color: white;
+}
+
+
+#secondprofilepic {
+    text-align: center;
+    font-size: 60px;
+    margin-left: 45%;
+    color: #87b0cc;
+}
+
+.aside {
+    padding-left: 25px;
+    padding-right: 25px;
+    width: 30%;
+    text-align: center;
+    background: white;
+    height: auto;
+}
+
+div.scroll {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: left;
+  padding-right: 20px;
+}
+
+input {
+    padding-left: 1em;
+}
+
+p.contactdetails {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #0e2d50;
+    font-size: 30px;
+    text-align: center;
+}
+
+main {
+    border-radius: 20px;
+    background: #e1e6e9;
+    flex: 1 1 0%;
+    overflow: auto;
+    padding: 1rem;
+}
+
+#createPopup {
+    text-align: center;
+    display: contents;
+    width: 50%;
+    font-family: "Cormorant Garamond";
+}
+
+#generic-form {
+    text-align: center;
+    display: none;
+    font-family: "Cormorant Garamond";
+    position: fixed;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    font-size: 20px;
+    color: #87b0cc;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.contactrow {
+    padding-bottom: 15px;
+}
