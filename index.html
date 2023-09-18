@@ -5,7 +5,10 @@
     <script src="js/md5.js"></script>
     <script src="js/code.js"></script>
     <link href="css/style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito|Almarai" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant Garamond|Almarai" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/241fdb8d3d.js" crossorigin="anonymous"></script>
     
 </head>
@@ -15,7 +18,7 @@
         <div class="rightside">
             <h1><i class="fa-solid fa-feather-pointed" style="color: #ffffff;"></i> Quill Contacts</h1>
             
-            <div id="loginform">
+            <div id="loginform" style="padding-left:20px">
                 <h2 style="text-align: center;">Login</h2>
 
                 <input type="loginName" id="loginName" placeholder="Username" />
@@ -32,11 +35,11 @@
                     <button type="buttons" id="loginButton" class="buttons" onclick="doLogin();"> Login </button>
                     <button type="buttons" id="registerButton" class="deselect" onclick="myFunction();"> Register
                     </button>
-                    <p id="result"></p>
+                    <p id="result" style="color:white; font-size: 20px;"></p>
                 </div>
             </div>
 
-            <div id="registerform">
+            <div id="registerform" style="padding-left: 100%;">
                 <h2>Register Now!</h2>
 
                 <input type="firstName" id="firstName" placeholder="First Name" />
