@@ -11,13 +11,23 @@ hr.solid {
     width: auto;
     margin-right: 10px;
     text-align: left;
-    border-top: 2px solid #bbb;
+    border-top: 2px solid #0e2d50;
     margin-bottom: 0px;
 }
 
 #contactPopup {
     text-align: center;
     display: none;
+}
+
+
+#contactFirstName{
+  margin-left: -40%;
+  padding-top: 10px;
+  padding-left: 10%;
+  font-family: "Cormorant Garamond";
+  font-size: 25px;
+  color: #0e2d50;
 }
 
 #contactmessage{
@@ -54,13 +64,13 @@ img {
 
 #left {
     background-image:
-        linear-gradient(to left, rgba(255, 255, 255, 0.904), rgba(255, 255, 255, 0.404)),
-        url(/images/bookshelf.jpg);
-    background-size: contain;
+        url(/images/oldlibrary2.jpg);
+        background-repeat: no-repeat;
+    background-size: cover;
     margin: 0;
     padding: 0;
     height: 100vh;
-    width: 70%;
+    width: 80%;
     min-width: 700px;
 }
 
@@ -72,7 +82,7 @@ img {
 #right {
     float: right;
     border-radius: 80px 0px 0px 80px;
-    background-color: #87b0cc;
+    background-color: #5d798b;
     position: relative;
     min-width: 400px;
     max-width: 700px;
@@ -83,6 +93,7 @@ img {
     margin-top: 30vh;
     transform: translateY(-50%);
     position: absolute;
+    color: transparent;
     padding: 70px 60px 70px;
 }
 
@@ -91,7 +102,7 @@ img {
     color: #ffffff;
     font-size: 35px;
     margin-bottom: 10%;
-    padding-top: 150px;
+    padding-top: 80%;
 }
 
 .rightside h2 {
@@ -138,6 +149,7 @@ img {
     border-radius: 10px;
     color: #0e2d50;
     margin-top: 5%;
+    font-family: "Cormorant Garamond";
     cursor: pointer;
 }
 
@@ -162,17 +174,22 @@ img {
 #logout {
     background-color:rgba(255, 255, 255, 0.904);
     border-radius: 10px;
-    color: #87b0cc;
+    color:#0e2d50;
     outline: none;
     border: none;
     font-size: 25px;
     cursor: pointer;
-    padding-left: 55%;
-    padding-top: 37px;
+    padding-top: 45px;
+    padding-left: 10px;
     float: right;
     width: 80px;
     height: 35px;
     font-family: "Cormorant Garamond";
+}
+
+#logout:hover {
+  color: #87b0cc;
+  opacity: 80%;
 }
 
 .registerbutton {
@@ -199,9 +216,9 @@ img {
     margin-top: 20px;
     border: none;
     outline: none;
-    font-size: 20px;
+    font-size: 25px;
     font-family: "Cormorant Garamond";
-    color: #090ce2; 
+    color:#0e2d50;
     cursor: pointer;
     text-align: center;
     width: 50%;
@@ -239,7 +256,7 @@ div.column{
     border: none;
     outline: none;
     font-size: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Cormorant Garamond";
     color: #87b0cc;
     cursor: pointer;
     text-align: center;
@@ -295,7 +312,7 @@ h2 {
 }
 
 h3 {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Cormorant Garamond";
     color: #87b0cc;
 }
 
@@ -306,19 +323,20 @@ td {
     border-collapse: collapse;
     border-top: 2px solid;
     border-bottom: 2px solid;
-    border-color: #d8d8d8;
-    color: #0e2d50;
+    border-color:white
 }
 
 td {
     height: 100%;
+    background-image: url(/images/parchmentpaper.jpg);
+    border-radius: 10px;
     padding: 10px;
     margin-bottom: 20px;
 }
 
 ::placeholder { 
   font-family: "Cormorant Garamond";
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .topnav {
@@ -338,12 +356,13 @@ td {
 td button {
     text-align: left;
     width: 100%;
-    background-color: #FFFFFF;
+    background-color: transparent;
     display: flex;
     flex-direction: row;
     align-items: center;
     font-size: 30px;
-    color:#87b0cc;
+    color:#0e2d50;
+    background-image: url(/images/parchmentpaper.jpg);
     font-family: "Cormorant Garamond";
     border: none;
 }
@@ -351,7 +370,7 @@ td button {
 td button:hover {
     background-color: #d8d8d8;
     border-radius: 20px;
-    color: #0e2d50
+    color:white;
 }
 
 #logout:hover {
@@ -369,7 +388,9 @@ td button:hover {
 
 #searchText {
     border-radius: 10px;
-    background-color: #fff382;
+    padding-top: 5px;
+    padding-right:5px;
+    background-image: url(/images/parchmentpaper.jpg);
     outline: none;
     border: none;
     height: 40px;
@@ -385,10 +406,14 @@ td button:hover {
   font-size: 40px;
 }
 
+#closebtn{
+  display: none;
+}
+
 
 #srchBtn {
     border-radius: 10px;
-    background-color: #E3E3E3;
+    background-color: #0e2d50;
     margin-left: -20px;
     outline: none;
     border: none;
@@ -397,13 +422,6 @@ td button:hover {
     width: 25%;
 }
 
-#searchbutton {
-    height: 50px;
-    width: 50px;
-    border-radius: 10px;
-    outline: none;
-    border: none;
-}
 
 #searchPopup {
     text-align: center;
@@ -433,7 +451,9 @@ td button:hover {
     color: #87b0cc;
     background-color: #ffffff;
     font-size: 20px;
-    padding-top: 18px;
+    padding-top: 30px;
+    padding-left: 65%;
+    margin-right: 20px;
     font-family: "Cormorant Garamond";
 }
 
@@ -443,30 +463,33 @@ input[type="contactinfo"] {
     text-align: left;
     width: auto;
     overflow-x: hidden;
-    margin-left: 5%;
+    margin-left: 10%;
     font-family: "Cormorant Garamond";
     font-size: 20px;
-    height: 30px;
+    height: 20%;
     display: block;
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 5px;
     display: inline-block;
-    background-color: #FAFAFA;
+    background-color: #ffffff;
     border: none;
 }
 
 
 i.material-icons {
-    color: #87b0cc;
+    color: white;
     font-size: 35px;
-    padding-bottom: 10px;
 }
 
 p.subheadings {
     font-family: "Cormorant Garamond";
-    color: #87b0cc;
+    font-size: 25px;
+    color:#0e2d50;
+    background-color:#ffffff;
+    padding:10px;
     margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 
@@ -480,14 +503,7 @@ p.subheadings {
 hr.solid2 {
     margin-right: 10px;
     width: auto;
-    border: 1px solid #bbb;
-}
-
-#contactinfothatexists {
-    font-size: 20px;
-    text-align: left;
-    color: #87b0cc;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 1px solid #0e2d50;
 }
 
 input[type="firstName"],
@@ -502,9 +518,9 @@ input[type="email"] {
     width: 80%;
     margin-bottom: 2%;
     margin-left: 10%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 16px;
-    height: 30px;
+    font-family: "Cormorant Garamond";
+    font-size: 20px;
+    height: 50px;
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 5px;
@@ -525,7 +541,7 @@ input[type="email"] {
 }
 
 #logo {
-    color: #87b0cc;
+    color:#0e2d50;
     padding-left: 25px;
     font-size: 35px;
     font-family: 'Cormorant Garamond';
@@ -542,7 +558,7 @@ span.material-symbols-outlined {
 .buttons {
     background-color: #FFFFFF;
     border-radius: 10px;
-    color: #87b0cc;
+    color: rgb(77, 52, 23);
     cursor: pointer;
     padding: 0px;
     height: 30px;
@@ -552,7 +568,7 @@ span.material-symbols-outlined {
     width: 50%;
     outline: none;
     border: none;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Cormorant Garamond";
 }
 
 /*
@@ -575,12 +591,36 @@ nav {
     background-color: white;
 }
 
-
 #secondprofilepic {
+  margin-top: 40px;
+  padding-left: 1%;
+  padding-bottom: 15px;
     text-align: center;
-    font-size: 60px;
+    border-radius: 10px;
+    font-size: 80px;
     margin-left: 45%;
-    color: #87b0cc;
+    color:#0e2d50;
+    background-color: white;
+}
+
+
+span.deleteicon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  display: block;
+  margin-top: 38px;
+  right: 6%;
+  width: 20px;
+  height: 20px;
+  padding-bottom: 2px;
+  border-radius: 50%;
+  color: white;
+  background-color: #0e2d50;
+  font: 20px "Cormorant Garamond";
+  text-align: center;
+  line-height: 1em;
+  cursor: pointer;
 }
 
 .aside {
@@ -594,6 +634,7 @@ nav {
 
 div.scroll {
   background-color: #ffffff;
+  border-radius: 10px;
   width: 100%;
   height: 100%;
   overflow-x: hidden;
@@ -607,7 +648,7 @@ input {
 }
 
 p.contactdetails {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Cormorant Garamond";
     color: #0e2d50;
     font-size: 30px;
     text-align: center;
@@ -615,10 +656,11 @@ p.contactdetails {
 
 main {
     border-radius: 20px;
-    background: #e1e6e9;
-    flex: 1 1 0%;
+    /*background: #e1e6e9;*/
+    height: 100%;
+    width: 100%;
+    background-image: url(/images/books2.jpg);
     overflow: auto;
-    padding: 1rem;
 }
 
 #createPopup {
@@ -640,8 +682,7 @@ main {
     flex-direction: row;
     align-items: flex-start;
     font-size: 20px;
-    color: #87b0cc;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Cormorant Garamond";
 }
 
 .contactrow {
