@@ -2,7 +2,7 @@
 <head>
     <script src="/js/md5.js"></script>
     <script src="/js/code.js"></script>
-    <link href="/css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,700&display=swap" rel="stylesheet">
@@ -23,8 +23,8 @@
 
 <body onload = "listContacts()">
     <div class="row">
-      <p id="logo"><i class="fa-solid fa-feather-pointed" style="color: #87b0cc; font-size: 30px;"></i> Quill Contacts</p>
-        <p id="firstnamehere"></p>
+      <p id="logo"><i class="fa-solid fa-feather-pointed" style="font-size: 30px; color:#0e2d50;"></i> Quill Contacts</p>
+        <p id="firstnamehere">Hi John</p>
         <button id="logout" onclick="doLogout();">Logout</button>
     </div> 
     <div id="contactspage">
@@ -33,7 +33,7 @@
                 <div class="row">
                     <input type="search" id="searchText" name="search" placeholder="Search.."  required />
                     <button type="buttons" id="srchBtn" onclick="searchContact();"><i class="material-icons" id="searchicon">search</i></button>
-                    <button type="buttons" id="addbutton" onclick="showCreateInfo();"><i class="material-icons" id="addicon">add</i>
+                    <button type="buttons" id="addbutton" onclick="showCreateInfo();"><i class="material-icons" id="addicon" style="color:#0e2d50; padding-bottom: 5px;">add</i>
                     </button>
                 </div>
                 <div>
@@ -49,17 +49,28 @@
             <main>
                 <div id="createPopup">
                     <span class="material-symbols-outlined" id="secondprofilepic">account_circle</span>
-                    <input type="firstName" id="firstN" placeholder="First Name" style="width:50%; margin-left: 25%;"/>
-                    <input type="lastName" id="lastN" placeholder="Last Name" style="width:50%; margin-left: 25%;"/>
-                    <input type="phone" id="phoneNum" placeholder="Phone Number" style="width:50%; margin-left: 25%;"/>
-                    <input type="email" id="email" placeholder="Email" style="width:50%; margin-left: 25%;"/>
-                    <button type="buttons" id="addContact" onclick="addContact();" style="width:40%; margin-left: 30%;">Add Contact<i class="material-icons" id="addicon" style="
-                     font-size:30px;  display: flex;
-    flex-direction: row;
-    align-items: flex-start;">add</i></button>
-                 <div style="text-align:center">
-                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                     <button type="buttons" id="contactmessage"> <p id="contactAddResult"></p></button>   
+                    <div class="row">
+                    <input type="firstName" id="firstN" placeholder="First Name" style="width:50%; margin-left: 25%; height: 80px;"/>
+                    <span class="deleteicon" onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
+                  </div>
+                  <div class="row">
+                    <input type="lastName" id="lastN" placeholder="Last Name" style="width:50%; margin-left: 25%; height: 80px;"/>
+                    <span class="deleteicon" onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
+                  </div>
+                  <div class="row">
+                    <input type="phone" id="phoneNum" placeholder="Phone Number" style="width:50%; margin-left: 25%; height: 80px;"/>
+                    <span class="deleteicon" onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
+                  </div>
+                  <div class="row">
+                    <input type="email" id="email" placeholder="Email" style="width:50%; margin-left: 25%; height: 80px;"/>
+                    <span class="deleteicon" onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
+                  </div>
+                  <div class="row">
+                    <button type="buttons" id="addContact" onclick="addContact();" style="width:20%; height: auto; margin-left: 40%; padding-top: 10px; margin-top: 3%; padding-right: 25px;">Add Contact</button>
+                    <i class="material-icons" id="addicon" style="color:#0e2d50;; font-size:30px; padding-top: 38px; padding-left:5px; margin-left: -5%;">add</i>
+                  </div>
+                 <div style="text-align:center; padding-top: 10%; font-size:30px; color: white;">
+                     <p id="contactAddResult"></p>
                     </div>
                 </div>
                 <div id="searchPopup">
@@ -72,34 +83,57 @@
                     </div>
                 </div>
                 <div id="contactPopup">
-                    <div class="row" style="padding-top:20px; margin-left:45%;">
+                  <span class="material-symbols-outlined" id="secondprofilepic">account_circle</span>
+                  <div class="row">
+                  <input type="firstName" id="firstN" placeholder="First Name:" style="width:50%; margin-left: 25%; height: 80px;" disabled/>
+                  <p id="contactFirstName"></p>
+                </div>
+                <div class="row">
+                  <input type="lastName" id="lastN" placeholder="Last Name"+ style="width:50%; margin-left: 25%; height: 80px;"/>
+                <div class="row">
+                  <input type="phone" id="phoneNum" placeholder="Phone Number" style="width:50%; margin-left: 25%; height: 80px;"/>
+                  <span class="deleteicon" onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
+                </div>
+                <div class="row">
+                  <input type="email" id="email" placeholder="Email" style="width:50%; margin-left: 25%; height: 80px;"/>
+                  <span class="deleteicon" onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
+                </div>
+                <div class="row">
+                  <button type="buttons" id="addContact" onclick="addContact();" style="width:20%; height: auto; margin-left: 40%; padding-top: 10px; margin-top: 3%; padding-right: 25px;">Add Contact</button>
+                  <i class="material-icons" id="addicon" style="color:#0e2d50;; font-size:30px; padding-top: 38px; padding-left:5px; margin-left: -5%;">add</i>
+                </div>
+               <div style="text-align:center; padding-top: 10%;">
+                   <p id="contactAddResult"></p>
+                  </div>
+                </div>
+<!--
+                    <div class="row" style="padding-top:20px;">
                         <span class="material-symbols-outlined" id="secondprofilepic">account_circle</span>
                     </div>
-                    <div class="row" style="padding-top:20px; margin-left:25%;">
+                    <div class="row" style="padding-top:20px; margin-left:25%; height: 80px;">
                         <p class="subheadings">First Name</p>
-                        <input type="contactinfo" id="contactInfo" disabled />
+                        <input type="contactinfo" id="contactInfo"/> 
                         <p id="contactFirstName"></p>
                     </div>
-                    <div class="row" style="padding-top:20px; margin-left:25%;">
+                    <div class="row" style="padding-top:20px; margin-left:25%; height: 80px;">
                         <p class="subheadings">Last Name</p>
                         <input type="contactinfo" id="contactinfo" disabled />
                         <p id="contactLastName"></p>
                     </div>
-                    <div class="row" style="padding-top:20px; margin-left:25%;">
+                    <div class="row" style="padding-top:20px; margin-left:25%; height: 80px;">
                         <p class="subheadings">Phone Number</p>
                         <input type="contactinfo" id="contactinfo" disabled />
                         <p id="contactPhone"></p>
                     </div>
-                    <div class="row" style="padding-top:20px; margin-left:25%;">
+                    <div class="row" style="padding-top:20px; margin-left:25%; height: 40%; width:200px">
                         <p class="subheadings">Email</p>
                         <input type="contactinfo" id="contactinfo" disabled />
                         <p id="contactEmail"></p>
                     </div>
-                    <div class="row" style="padding-top: 40px; padding-left: 30%;">
+                    <div class="row" style=" padding-left: 30%;">
                         <p id="editBtn"></p>
                         <p id="deleteBtn"></p>
-                    </div>
-                </div>
+                    </div>-->
                 <div id="deletePopup">
                     <div style="text-align:center">
                         <p id="contactDeleteResult"></p>
