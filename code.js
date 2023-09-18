@@ -17,6 +17,13 @@ function myFunction() {
     }
 }
 
+function closebutton(){
+  var x = document.getElementById("closebtn");
+  if(x.style.display === "none"){
+    x.style.display = "contents";
+  }
+}
+
 function myFunction2() {
     var x = document.getElementById("registerform");
     var y = document.getElementById("loginform");
@@ -45,10 +52,6 @@ function showPassword2() {
     } else {
         x.type = "password";
     }
-}
-
-function printPopUp() {
-    alert("Pop-up dialog-box")
 }
 
 function doLogin() {
@@ -198,7 +201,7 @@ function addContact() {
     try {
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("contactAddResult").innerHTML = "Contact has been added";
+                document.getElementById("contactAddResult").innerHTML = "Added to your scroll of contacts!";
                 searchContact();
             }
         };
@@ -412,7 +415,7 @@ function updateContact(id) {
 }
 
 function showDeletePopup(id) {
-    alert("called delete with id = " + id)
+    //alert("called delete with id = " + id)
     document.getElementById("contactPopup").style.display = "none";
     document.getElementById("deletePopup").style.display = "contents";
 
