@@ -1,7 +1,7 @@
 <html>
 <head>
-    <script src="/js/md5.js"></script>
-    <script src="/js/code.js"></script>
+    <script src="js/md5.js"></script>
+    <script src="js/code.js"></script>
     <link href="css/style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,14 +37,13 @@
                     </button>
                 </div>
                 <div>
-                  <div class="scroll">
-                    <p id="contactSearchResult"></p>
-                    <div class="row">
-                    <table id="contactTb"></table>
-                  </div>
-                  </div>
+                  <p id="contactSearchResult"></p>
+
+                  <table id="contactTb"></table>
                 </div>
-                <hr class="solid">
+              <hr class="solid">
+              <div class="scroll">
+              </div> 
             </div>
             <main>
                 <div id="createPopup">
@@ -83,29 +82,54 @@
                     </div>
                 </div>
                 <div id="contactPopup">
-                  <span class="material-symbols-outlined" id="secondprofilepic">account_circle</span>
+                  <div class="row" style="padding-top:20px;">
+                    <span class="material-symbols-outlined" id="secondprofilepic">account_circle</span>
+                </div>
+                <div class="row" style="padding-top:20px; margin-left:37%; height: 80px;">
+                    <p class="subheadings">First Name</p>
+                    <p id="contactFirstName" style="background-color: white; margin-left:5%; padding-top:10px; padding-bottom: 10px; text-align:center; padding-left:20px;  padding-right:20px; height: 30px; border-radius: 10px;"></p>
+                </div>
+                <div class="row" style="padding-top:20px; margin-left:37%; height: 80px;">
+                    <p class="subheadings">Last Name</p>
+                    <p id="contactLastName" style="font-size:25px; color:#0e2d50; background-color: white; margin-left:5%; padding-top:10px; padding-bottom: 10px; text-align:center; padding-left:20px;  padding-right:20px; height: 30px; border-radius: 10px;"></p>
+                </div>
+                <div class="row" style="padding-top:20px; margin-left:37%;  height: 80px;">
+                    <p class="subheadings">Phone Number</p>
+                    <p id="contactPhone" style="font-size:25px; color:#0e2d50;  background-color: white; margin-left:5%; padding-top:10px; padding-bottom: 15px; text-align:center; padding-left:20px;  padding-right:20px; height: 30px; border-radius: 10px;"></p>
+                </div>
+                <div class="row" style="padding-top:20px; margin-left:37%; height: 80px;">
+                    <p class="subheadings">Email</p>
+                    <p id="contactEmail" style="font-size:25px; color:#0e2d50;  background-color: white; margin-left:5%; padding-top:10px; padding-bottom: 15px; text-align:center; padding-left:20px;  padding-right:20px; height: 30px; border-radius: 10px;"></p>
+                </div>
+                <div class="row" style="margin-left: 40%; margin-top: 5%;">
+                    <p id="editBtn" style="border-radius: 10px; margin-right: 5%;"></p>
+                    <p id="deleteBtn" style="border-radius: 10px;"></p>
+                </div>
+              </div>
+
+                <!-- 
+                     <span class="material-symbols-outlined" id="secondprofilepic">account_circle</span>
                   <div class="row">
-                  <input type="firstName" id="firstN" placeholder="First Name:" style="width:50%; margin-left: 25%; height: 80px;" disabled/>
-                  <p id="contactFirstName"></p>
-                </div>
-                <div class="row">
-                  <input type="lastName" id="lastN" placeholder="Last Name"+ style="width:50%; margin-left: 25%; height: 80px;"/>
-                <div class="row">
-                  <input type="phone" id="phoneNum" placeholder="Phone Number" style="width:50%; margin-left: 25%; height: 80px;"/>
-                  <span class="deleteicon" onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
-                </div>
-                <div class="row">
-                  <input type="email" id="email" placeholder="Email" style="width:50%; margin-left: 25%; height: 80px;"/>
-                  <span class="deleteicon" onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
-                </div>
-                <div class="row">
-                  <button type="buttons" id="addContact" onclick="addContact();" style="width:20%; height: auto; margin-left: 40%; padding-top: 10px; margin-top: 3%; padding-right: 25px;">Add Contact</button>
-                  <i class="material-icons" id="addicon" style="color:#0e2d50;; font-size:30px; padding-top: 38px; padding-left:5px; margin-left: -5%;">add</i>
-                </div>
-               <div style="text-align:center; padding-top: 10%;">
-                   <p id="contactAddResult"></p>
+                    <input type="firstName" id="firstN" placeholder="First Name:" style="width:50%; margin-left: 25%; height: 80px;" disabled/>
+                    <p type = "contactfieldinfo" id="contactFirstName"></p>
                   </div>
+                  <div class="row">
+                    <input type="lastName" id="lastN" placeholder="Last Name"+ style="width:50%; margin-left: 25%; height: 80px;" disabled/>
+                    <p type = "contactfieldinfo" id="contactLastName"></p>
+                 </div>
+                 <div class="row">
+                  <input type="phone" id="phoneNum" placeholder="Phone Number" style="width:50%; margin-left: 25%; height: 80px;" disabled/>
+                  <p type = "contactfieldinfo" id="contactPhone"></p>
+               </div>
+               <div class="row">
+                  <input type="email" id="email" placeholder="Email" style="width:50%; margin-left: 25%; height: 80px;" disabled/>
+                  <p type = "contactfieldinfo" id="contactEmail"></p>
+               </div>
+               <div class="row" style=" padding-left: 100%;">
+                        <p id="editBtn"></p>
+                        <p id="deleteBtn"></p>
                 </div>
+                --> 
 <!--
                     <div class="row" style="padding-top:20px;">
                         <span class="material-symbols-outlined" id="secondprofilepic">account_circle</span>

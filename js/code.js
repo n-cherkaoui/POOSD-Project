@@ -17,6 +17,25 @@ function myFunction() {
     }
 }
 
+function closebutton(){
+  var x = document.getElementById("closebtn");
+  if(x.style.display === "none"){
+    x.style.display = "contents";
+  }
+}
+
+function hideEdit(){
+  var x = document.getElementById("createPopup");
+  var y = document.getElementById("editPopup");
+  if (x.style.display === "none") {
+    x.style.display = "contents";
+    y.style.display = "none";
+} else {
+    x.style.display = "none";
+    y.style.display = "none";
+}
+}
+
 function myFunction2() {
     var x = document.getElementById("registerform");
     var y = document.getElementById("loginform");
@@ -45,10 +64,6 @@ function showPassword2() {
     } else {
         x.type = "password";
     }
-}
-
-function printPopUp() {
-    alert("Pop-up dialog-box")
 }
 
 function doLogin() {
@@ -198,7 +213,7 @@ function addContact() {
     try {
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("contactAddResult").innerHTML = "Contact has been added";
+                document.getElementById("contactAddResult").innerHTML = "Added to your scroll of contacts!";
                 searchContact();
             }
         };
@@ -245,6 +260,49 @@ function printContacts() {
     //searchContact();
 }
 
+function listContacts() {
+    let srch = document.getElementById("searchText").value;
+    document.getElementById("contactSearchResult").innerHTML = "";
+
+    let tmp = { search: srch, userId: userId };
+    let jsonPayload = JSON.stringify(tmp);
+
+    let url = urlBase + '/SearchContact.' + extension;
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+    try {
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                let jsonObject = JSON.parse(xhr.responseText);
+
+                let contactNames = new Array(jsonObject.results.length);
+                let contactInfo = new Array(jsonObject.results.length);
+                let contactIDs = new Array(jsonObject.results.length);
+
+
+                for (let i = 0; i < jsonObject.results.length; i++) {
+                    let contact = jsonObject.results[i];
+
+                    let contactName = `${contact.firstName} ${contact.lastName}`;
+                    let contactDetail = [`${contact.id}`, `${contact.firstName}`, `${contact.lastName}`, `${contact.phone}`, `${contact.email}`];
+
+                    contactNames[i] = contactName;
+                    contactInfo[i] = contactDetail;
+                }
+
+                displayContacts(contactNames, contactInfo);
+            }
+        };
+        xhr.send(jsonPayload);
+    }
+    catch (err) {
+        document.getElementById("contactSearchResult").innerHTML = err.message;
+    }
+}
+
 function searchContact() {
     let srch = document.getElementById("searchText").value;
     document.getElementById("contactSearchResult").innerHTML = "";
@@ -261,7 +319,6 @@ function searchContact() {
     try {
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("contactSearchResult").innerHTML = "Contact(s) has been retrieved";
                 let jsonObject = JSON.parse(xhr.responseText);
 
                 let contactNames = new Array(jsonObject.results.length);
@@ -295,7 +352,7 @@ function displayContacts(contactNames, contactInfo) {
 
     var table = "<tr>", perrow = 1;
     data.forEach((value, i) => {
-        table += `<td><button type="button" onclick="showContact('${info[i]}');"><span class="material-symbols-outlined">account_circle</span>
+        table += `<td><button type="button" onclick="showContact('${info[i]}');"><span class="material-symbols-outlined" id = "sidebarprofilepic">account_circle</span>
             ${value}</button></td>`;
         var next = i + 1;
         if (next % perrow == 0 && next != data.length) { table += "</tr><tr>"; }
@@ -308,6 +365,7 @@ function displayContacts(contactNames, contactInfo) {
 function showContact(info) {
     contacts = info.split(',');
 
+    document.getElementById("editPopup").style.display = "none";
     document.getElementById("createPopup").style.display = "none";
     document.getElementById("contactPopup").style.display = "contents";
 
@@ -317,8 +375,7 @@ function showContact(info) {
     document.getElementById("contactEmail").innerHTML = contacts[4];
 
     //var btn = "<button>";
-    let btn = `<button type="buttons" id="editcontact" onclick="showUpdateForm('${contacts[0]}');"
-            style="padding-right: 40px;"><i class="material-icons"
+    let btn = `<button type="buttons" id="editcontact" onclick="showUpdateForm('${contacts[0]}');"><i class="material-icons"
             id="editicon">history_edu</i>Edit</button>`;
 
     document.getElementById("editBtn").innerHTML = btn;
@@ -329,8 +386,9 @@ function showContact(info) {
     document.getElementById("deleteBtn").innerHTML = btn2;
 }
 
+
 function showUpdateForm(id) {
-    alert("called edit with id = " + id)
+   // alert("called edit with id = " + id)
     document.getElementById("contactPopup").style.display = "none";
     document.getElementById("editPopup").style.display = "contents";
 
@@ -358,6 +416,7 @@ function updateContact(id) {
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("contactEditResult").innerHTML = "Contact has been updated";
+                hideEdit();
                 searchContact();
             }
         };
@@ -369,7 +428,7 @@ function updateContact(id) {
 }
 
 function showDeletePopup(id) {
-    alert("called delete with id = " + id)
+    //alert("called delete with id = " + id)
     document.getElementById("contactPopup").style.display = "none";
     document.getElementById("deletePopup").style.display = "contents";
 
