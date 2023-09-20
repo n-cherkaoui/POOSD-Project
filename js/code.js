@@ -24,18 +24,6 @@ function closebutton(){
   }
 }
 
-function hideEdit(){
-  var x = document.getElementById("createPopup");
-  var y = document.getElementById("editPopup");
-  if (x.style.display === "none") {
-    x.style.display = "contents";
-    y.style.display = "none";
-} else {
-    x.style.display = "none";
-    y.style.display = "none";
-}
-}
-
 function myFunction2() {
     var x = document.getElementById("registerform");
     var y = document.getElementById("loginform");
@@ -365,7 +353,6 @@ function displayContacts(contactNames, contactInfo) {
 function showContact(info) {
     contacts = info.split(',');
 
-    document.getElementById("editPopup").style.display = "none";
     document.getElementById("createPopup").style.display = "none";
     document.getElementById("contactPopup").style.display = "contents";
 
@@ -375,7 +362,8 @@ function showContact(info) {
     document.getElementById("contactEmail").innerHTML = contacts[4];
 
     //var btn = "<button>";
-    let btn = `<button type="buttons" id="editcontact" onclick="showUpdateForm('${contacts[0]}');"><i class="material-icons"
+    let btn = `<button type="buttons" id="editcontact" onclick="showUpdateForm('${contacts[0]}');"
+            style="padding-right: 40px;"><i class="material-icons"
             id="editicon">history_edu</i>Edit</button>`;
 
     document.getElementById("editBtn").innerHTML = btn;
@@ -416,7 +404,6 @@ function updateContact(id) {
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("contactEditResult").innerHTML = "Contact has been updated";
-                hideEdit();
                 searchContact();
             }
         };
